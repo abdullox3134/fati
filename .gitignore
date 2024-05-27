@@ -1,0 +1,11 @@
+db.sqlite3
+.idea
+venv
+.venv
+env
+.env
+migrations
+staticfiles
+static
+media
+__pycache__
