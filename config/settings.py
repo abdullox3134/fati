@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'xalqaro_aloqalar',
 
 
+    'drf_yasg',
     'rest_framework',
 ]
 
