@@ -1,0 +1,105 @@
+body {
+    background-color: #fff; /* Qorong'i fon rangi */
+    color: #ffffff; /* Oq matn rangi */`
+}
+h1 {
+color:#000;
+}
+content-main .addlink {
+background:green;
+color:#fff;
+}
+#toolbar {
+    background-color: #444 !important;
+}
+#toolbar #searchbar {
+    background-color: #444 !important;
+}
+.changelist-form-container {
+    background: #444 important;
+}
+.main.shifted > #nav-sidebar {
+    background:#444;
+}
+caption {
+    background:#4e69d3 !important;
+}
+div.breadcrumbs {
+    background:#4e69d3 !important;
+    color:#fff;
+}
+#changelist .actions {
+    background:#444 !important;
+    width:98.5% !important;
+}
+#changelist .paginator {
+    background:#444 !important;
+    width:98.5%;
+}
+#changelist .actions select {
+    background:#fff !important;
+    color:#444 !important;
+}
+#site-name a:link, #site-name a:visited {
+    color:#5cff37 !important;
+    font-weight: 900;
+}
+input[type="submit"], button {
+    background: #4e69d3
+}
+.submit-row input.default {
+    background: green;
+}
+#toolbar #searchbar {
+    border: 1px solid #fff !important;
+}
+#toolbar form input[type="submit"] {
+    border:1px solid #fff !important;
+    background: transparent !important;
+}
+#toolbar form input[type="submit"]:hover {
+    background:#000 !important;
+}
+a:link, a:visited {
+    color: black;
+}
+#header {
+    background-color: #444; /* Qorong'i header fon rangi */
+    color:#222;
+}
+
+#content-main {
+    background-color: #fff; /* Qorong'i kontent fon rangi */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.module h2, .module caption {
+    color: #f0f0f0; /* Oq modullar sarlavhalari */
+}
+
+.module th {
+    background-color: #666; /* Qorong'i modullar jadvali sarlavhalari */
+    color: #ffffff; /* Oq matn rangi */
+}
+
+.module td {
+    background-color: #3a3a3a; /* Qorong'i modullar jadvali uyasi */
+    color: #ffffff; /* Oq matn rangi */
+}
+
+.breadcrumbs, .grp-header, .object-tools, .grp-module-caption {
+    background-color: #2a2a2a; /* Qorong'i non sindirilgan qismi */
+    color: #ffffff; /* Oq matn rangi */
+}
+
+.grp-footer, .grp-submit-row, .submit-row {
+    background-color: #212121; /* Qorong'i tugmalar qatori */
+}
+
+.grp-footer a, .grp-submit-row a, .submit-row a {
+    color: #ff9800; /* To'q sariq havola rangi */
+}
+
+.grp-footer a:hover, .grp-submit-row a:hover, .submit-row a:hover {
+    color: #ff5722; /* To'q sariq havola hover rangi */
+}

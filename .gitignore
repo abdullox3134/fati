@@ -6,6 +6,5 @@ env
 .env
 migrations
 staticfiles
-static
 media
 __pycache__
