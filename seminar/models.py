@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
@@ -26,7 +27,7 @@ class Seminar_turlari(models.Model):
 
 class Seminar(models.Model):
     title = models.CharField(max_length=255)
-    subcontent = models.TextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     seminar_id = models.ForeignKey(Seminar_turlari, on_delete=models.CASCADE, blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
@@ -51,8 +52,8 @@ class Seminar(models.Model):
 
 class Seminar_majlislari(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
-    subcontent = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Seminar_majlislari/files/', blank=True, null=True)
     data = models.DateField()
     seminar_id = models.ForeignKey(Seminar_turlari, on_delete=models.CASCADE, blank=True, null=True)

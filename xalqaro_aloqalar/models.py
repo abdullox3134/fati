@@ -1,10 +1,11 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
 class Xamkor_tashkilot(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
-    subcontent = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Xamkor_tashkilot/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
@@ -29,8 +30,8 @@ class Xamkor_tashkilot(models.Model):
 
 class Xamkor_loihalar(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
-    subcontent = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Xamkor_loihalar/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
@@ -55,8 +56,8 @@ class Xamkor_loihalar(models.Model):
 
 class Xalqaro_tadqiqot(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
-    subcontent = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Xalqaro_tadqiqot/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
@@ -81,8 +82,8 @@ class Xalqaro_tadqiqot(models.Model):
 
 class Xalqaro_sayohatlar(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=True, null=True)
-    subcontent = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Xalqaro_sayohatlar/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),

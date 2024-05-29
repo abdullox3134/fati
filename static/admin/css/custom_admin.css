@@ -44,6 +44,9 @@ div.breadcrumbs {
     color:#5cff37 !important;
     font-weight: 900;
 }
+a:link, a:visited {
+    color: #fff !important;
+}
 input[type="submit"], button {
     background: #4e69d3
 }
