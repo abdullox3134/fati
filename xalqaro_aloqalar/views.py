@@ -16,7 +16,7 @@ class Xamkor_tashkilotListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Xamkor_tashkilot.objects.all().order_by('-created_at')
+        return Xamkor_tashkilot.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -33,7 +33,7 @@ class Xamkor_loihalarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Xamkor_loihalar.objects.all().order_by('-created_at')
+        return Xamkor_loihalar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -50,7 +50,7 @@ class Xalqaro_tadqiqotListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Xalqaro_tadqiqot.objects.all().order_by('-created_at')
+        return Xalqaro_tadqiqot.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -67,7 +67,7 @@ class Xalqaro_sayohatlarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Xalqaro_sayohatlar.objects.all().order_by('-created_at')
+        return Xalqaro_sayohatlar.objects.all().order_by('order')
 
 
 @api_view(['GET'])

@@ -16,7 +16,7 @@ class Seminar_turlariListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Seminar_turlari.objects.all().order_by('-created_at')
+        return Seminar_turlari.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -33,7 +33,7 @@ class SeminarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Seminar.objects.all().order_by('-created_at')
+        return Seminar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -50,7 +50,7 @@ class Seminar_majlislariListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Seminar_majlislari.objects.all().order_by('-created_at')
+        return Seminar_majlislari.objects.all().order_by('order')
 
 
 @api_view(['GET'])

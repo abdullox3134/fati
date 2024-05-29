@@ -19,7 +19,7 @@ class Institut_tarixiListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Institut_tarixi.objects.all().order_by('-created_at')
+        return Institut_tarixi.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -36,7 +36,7 @@ class Memory_hujjatlarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Memory_hujjatlar.objects.all().order_by('-created_at')
+        return Memory_hujjatlar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -53,7 +53,7 @@ class ElonlarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Elonlar.objects.all().order_by('-created_at')
+        return Elonlar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -70,7 +70,7 @@ class AloqaListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Aloqa.objects.all().order_by('-created_at')
+        return Aloqa.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -87,7 +87,7 @@ class KaruselListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Karusel.objects.all().order_by('-created_at')
+        return Karusel.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -104,7 +104,7 @@ class RahbariyatListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Rahbariyat.objects.all().order_by('-created_at')
+        return Rahbariyat.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -121,7 +121,7 @@ class Tashkiliy_tuzulmaListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Tashkiliy_tuzulma.objects.all().order_by('-created_at')
+        return Tashkiliy_tuzulma.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -138,7 +138,7 @@ class YangiliklarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Yangiliklar.objects.all().order_by('-created_at')
+        return Yangiliklar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
@@ -155,7 +155,7 @@ class HavolalarListView(ListAPIView):
     pagination_class = ResultsSetPagination
 
     def get_queryset(self):
-        return Havolalar.objects.all().order_by('-created_at')
+        return Havolalar.objects.all().order_by('order')
 
 
 @api_view(['GET'])
