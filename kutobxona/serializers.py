@@ -1,7 +1,5 @@
 from rest_framework import serializers
-
 from kutobxona.models import Category, Archive, DissertationsAndAbstracts, Editor, Requirements
-
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -19,17 +17,16 @@ class ArchiveSerializer(serializers.ModelSerializer):
 class DissertationsAndAbstractsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DissertationsAndAbstracts
-        fields = ('id', 'title', 'content', 'content', 'file', 'data', 'image', 'status', 'order',
-                  'created_at', 'updated_at',)
-        
+        fields = ('id', 'title', 'content', 'file', 'image', 'status', 'order', 'created_at', 'updated_at',)
+
+
 class EditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Editor
-        fields = ('id', 'title', 'content', 'subcontent', 'file', 'email', 'image', 'status', 'order',
-                  'created_at', 'updated_at',)
-        
+        fields = ('id', 'title', 'content', 'file', 'email', 'image', 'status', 'order', 'created_at', 'updated_at',)
+
+
 class RequirementsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requirements
-        fields = ('id', 'title', 'content', 'sub_content', 'file', 'status', 'order',
-                  'created_at', 'updated_at',)
+        fields = ('id', 'title', 'content', 'sub_content', 'file', 'status', 'order', 'created_at', 'updated_at',)

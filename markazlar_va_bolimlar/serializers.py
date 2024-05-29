@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix, Tadqiqot, Rasm, Video, Azolar
+from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix, Tadqiqot, Rasm, Video, Azolar, Azolarsub
 
 
 class Markazlar_bolimlarSerializer(serializers.ModelSerializer):
@@ -22,11 +22,19 @@ class TadqiqotSerializer(serializers.ModelSerializer):
                   'updated_at',)
 
 
+class AzolarsubSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Azolarsub
+        fields = ('id', 'title', 'link',)
+
+
 class AzolarSerializer(serializers.ModelSerializer):
+    azolarsub = AzolarsubSerializer(many=True, read_only=True)
+
     class Meta:
         model = Azolar
         fields = ('id', 'title', 'content', 'birth', 'sphere', 'center_id', 'position', 'academic_degree',
-                  'email', 'file', 'status', 'order', 'created_at', 'updated_at',)
+                  'email', 'file', 'status', 'order', 'created_at', 'updated_at', 'azolarsub',)
 
 
 class RasmSerializer(serializers.ModelSerializer):
