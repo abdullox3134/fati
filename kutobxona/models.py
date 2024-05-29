@@ -50,9 +50,6 @@ class DissertationsAndAbstracts(models.Model):
     class Meta:
         verbose_name = 'Disertatsiya va avtorefarat'
         verbose_name_plural = 'Disertatsiya va avtorefaratlar'
-
-    
-    
     
     
 class Editor(models.Model):
