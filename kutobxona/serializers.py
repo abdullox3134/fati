@@ -11,19 +11,21 @@ class CategorySerializer(serializers.ModelSerializer):
 class ArchiveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Archive
-        fields = ('id', 'title', 'sub_content', 'content', 'image', 'file', 'base_file', 'status', 'order', 'created_at', 'updated_at',)
+        fields = ('id', 'title', 'content', 'sub_content', 'file', 'base_file', 'status', 'order', 'created_at',
+                  'updated_at',)
 
 
 class DissertationsAndAbstractsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DissertationsAndAbstracts
-        fields = ('id', 'title', 'content', 'file', 'image', 'status', 'order', 'created_at', 'updated_at',)
+        fields = ('id', 'title', 'category', 'content', 'image', 'file', 'status', 'order' 'created_at', 'updated_at',)
 
 
 class EditorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Editor
-        fields = ('id', 'title', 'content', 'file', 'email', 'image', 'status', 'order', 'created_at', 'updated_at',)
+        fields = ('id', 'title', 'position', 'degree', 'sphere', 'content', 'email', 'file', 'status', 'order',
+                  'created_at', 'updated_at',)
 
 
 class RequirementsSerializer(serializers.ModelSerializer):

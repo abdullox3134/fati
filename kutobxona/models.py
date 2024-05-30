@@ -27,7 +27,10 @@ class Category(models.Model):
     
 class DissertationsAndAbstracts(models.Model):
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category', blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='media/archive/image/', blank=True, null=True)
+    file = models.FileField(upload_to='media/archive/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
@@ -37,9 +40,6 @@ class DissertationsAndAbstracts(models.Model):
         choices=STATUS_CHOICES,
         default='published',
     )
-    content = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='library_images/', blank=True, null=True)
-    file = models.FileField(upload_to='library_files/', blank=True, null=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -54,6 +54,12 @@ class DissertationsAndAbstracts(models.Model):
     
 class Editor(models.Model):
     title = models.CharField(max_length=255)
+    position = models.CharField(max_length=255, blank=True, null=True)
+    degree = models.CharField(max_length=255, blank=True, null=True)
+    sphere = models.CharField(max_length=255, blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    email = models.EmailField(unique=True, blank=True, null=True)
+    file = models.FileField(upload_to='media/archive/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
@@ -63,10 +69,6 @@ class Editor(models.Model):
         choices=STATUS_CHOICES,
         default='published',
     )
-    content = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='library_images/', blank=True, null=True)
-    file = models.FileField(upload_to='library_files/', blank=True, null=True)
-    email = models.EmailField(unique=True, blank=True, null=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -81,6 +83,10 @@ class Editor(models.Model):
     
 class Archive(models.Model):
     title = models.CharField(max_length=255)
+    content = RichTextField(blank=True, null=True)
+    sub_content = RichTextField(blank=True, null=True)
+    file = models.FileField(upload_to='media/archive/files/', blank=True, null=True)
+    base_file = models.FileField(upload_to='media/archive/base_file/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
@@ -90,11 +96,6 @@ class Archive(models.Model):
         choices=STATUS_CHOICES,
         default='published',
     )
-    content = RichTextField(blank=True, null=True)
-    sub_content = RichTextField(blank=True, null=True)
-    image = models.ImageField(upload_to='library_images/', blank=True, null=True)
-    file = models.FileField(upload_to='library_files/', blank=True, null=True)
-    base_file = models.FileField(upload_to='library_files/', blank=True, null=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -109,6 +110,9 @@ class Archive(models.Model):
     
 class Requirements(models.Model):
     title = models.CharField(max_length=255)
+    content = RichTextField(blank=True, null=True)
+    sub_content = RichTextField(blank=True, null=True)
+    file = models.FileField(upload_to='media/archive/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
@@ -118,10 +122,6 @@ class Requirements(models.Model):
         choices=STATUS_CHOICES,
         default='published',
     )
-    content = RichTextField(blank=True, null=True)
-    sub_content = RichTextField(blank=True, null=True)
-    image = models.ImageField(upload_to='library_images/', blank=True, null=True)
-    file = models.FileField(upload_to='library_files/', blank=True, null=True)
     order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

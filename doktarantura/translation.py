@@ -1,6 +1,6 @@
 from modeltranslation.translator import TranslationOptions
-from .models import Qabul_tartibi, Malakaviy_imtihon, Doktarantura
 from modeltranslation.decorators import register
+from .models import Qabul_tartibi, Malakaviy_imtihon, Doktarantura
 
 
 @register(Qabul_tartibi)
