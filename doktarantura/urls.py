@@ -8,7 +8,7 @@ urlpatterns = [
     path('qabul-tartibi/<int:pk>/', qabul_tartibidetail),
 
     path('malakaviy-imtihon/', Malakaviy_imtihonListView.as_view()),
-    path('malakaviy-imtihon/<int:pk>', malakaviy_imtihondetail),
+    path('malakaviy-imtihon/<int:pk>/', malakaviy_imtihondetail),
 
     path('doktarantura/', DoktaranturaListView.as_view()),
     path('doktarantura/<int:pk>/', doktaranturadetail),
