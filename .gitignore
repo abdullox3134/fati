@@ -5,6 +5,5 @@ venv
 env
 .env
 migrations
-staticfiles
 media
 __pycache__
