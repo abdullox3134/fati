@@ -18,7 +18,7 @@ class ArchiveSerializer(serializers.ModelSerializer):
 class DissertationsAndAbstractsSerializer(serializers.ModelSerializer):
     class Meta:
         model = DissertationsAndAbstracts
-        fields = ('id', 'title', 'category', 'content', 'image', 'file', 'status', 'order' 'created_at', 'updated_at',)
+        fields = ('id', 'title', 'category', 'content', 'image', 'file', 'status', 'order', 'created_at', 'updated_at',)
 
 
 class EditorSerializer(serializers.ModelSerializer):
