@@ -155,11 +155,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATICFILES_DIRS = [BASE_DIR / 'static', ]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -194,7 +189,7 @@ CKEDITOR_CONFIGS = {
 JAZZMIN_SETTINGS = {
     # "site_title": "Foydali Havolalar",
     "site_brand": "Fanlar Akademiyasi",
-    # "site_logo": "jadid.jpg",
+    "site_logo": "fati1.jpeg",
     "welcome_sign": "Xush Kelibsiz",
     "copyright": "Fati",
     # "search_model": ["app.model_name"],
