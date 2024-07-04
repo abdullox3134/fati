@@ -35,7 +35,7 @@ class Tashkiliy_tuzulmaTranslationOptions(TranslationOptions):
 
 @register(Yangiliklar)
 class YangiliklarTranslationOptions(TranslationOptions):
-    fields = ('title', 'content',)
+    fields = ('title', 'content', 'subcontent',)
 
 
 @register(Havolalar)
