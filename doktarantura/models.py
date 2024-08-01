@@ -57,13 +57,13 @@ class Doktarantura(models.Model):
     content = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Doktarantura/files/', blank=True, null=True)
     TYPE_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
+        ('doctaurant', 'Doctaurant'),
+        ('basic', 'Basic'),
     ]
     type = models.CharField(
         max_length=20,
         choices=TYPE_CHOICES,
-        default='published',
+        default='doctaurant',
     )
     STATUS_CHOICES = [
         ('published', 'Published'),
