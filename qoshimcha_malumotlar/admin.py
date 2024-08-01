@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from qoshimcha_malumotlar.models import Institut_tarixi, Memory_hujjatlar, Elonlar, Aloqa, Karusel, Rahbariyat, \
+from qoshimcha_malumotlar.models import Institut_tarixi, Aloqa, Karusel, Rahbariyat, \
     Tashkiliy_tuzulma, Yangiliklar, Havolalar
 
 
@@ -12,19 +12,19 @@ class Institut_tarixiAdmin(admin.ModelAdmin):
               'subcontent_uz', 'subcontent_ru', 'subcontent_en', 'file', 'base_file', 'status', 'order',]
 
 
-@admin.register(Memory_hujjatlar)
-class Memory_hujjatlarAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-    search_fields = ('title',)
-    fields = ['title_uz', 'title_ru', 'title_en', 'file', 'status', 'order',]
-
-
-@admin.register(Elonlar)
-class ElonlarAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'created_at', 'updated_at', 'type', 'order',)
-    search_fields = ('title',)
-    fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'type', 'status',
-              'order',]
+# @admin.register(Memory_hujjatlar)
+# class Memory_hujjatlarAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+#     search_fields = ('title',)
+#     fields = ['title_uz', 'title_ru', 'title_en', 'file', 'status', 'order',]
+#
+#
+# @admin.register(Elonlar)
+# class ElonlarAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'status', 'created_at', 'updated_at', 'type', 'order',)
+#     search_fields = ('title',)
+#     fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'type', 'status',
+#               'order',]
 
 
 @admin.register(Aloqa)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Markazlar_bolimlar, Azolar, Bolimlar_tarix, Tadqiqot, Rasm, Video, Azolarsub
+from .models import Markazlar_bolimlar, Azolar, Bolimlar_tarix, Rasm, Azolarsub
 
 
 @admin.register(Markazlar_bolimlar)
@@ -15,12 +15,12 @@ class Bolimlar_tarixisub(admin.ModelAdmin):
               'status', 'order', ]
 
 
-@admin.register(Tadqiqot)
-class Tadqiqotsub(admin.ModelAdmin):
-    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-    fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'center_id', 'file',
-              'status', 'order', ]
-
+# @admin.register(Tadqiqot)
+# class Tadqiqotsub(admin.ModelAdmin):
+#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+#     fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'center_id', 'file',
+#               'status', 'order', ]
+#
 
 class Azolarsubadmin(admin.TabularInline):
     model = Azolarsub
@@ -43,9 +43,9 @@ class Rasmsub(admin.ModelAdmin):
               'file', 'status', 'order', ]
 
 
-@admin.register(Video)
-class Videosub(admin.ModelAdmin):
-    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-    fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'center_id', 'link', 'file',
-              'status', 'order', ]
-
+# @admin.register(Video)
+# class Videosub(admin.ModelAdmin):
+#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+#     fields = ['title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'center_id', 'link', 'file',
+#               'status', 'order', ]
+#

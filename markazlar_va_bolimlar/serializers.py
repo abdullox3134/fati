@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix, Tadqiqot, Rasm, Video, Azolar, Azolarsub
+from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix, Rasm, Azolar, Azolarsub
 
 
 class Markazlar_bolimlarSerializer(serializers.ModelSerializer):
@@ -15,11 +15,11 @@ class Bolimlar_tarixSerializer(serializers.ModelSerializer):
                   'updated_at',)
 
 
-class TadqiqotSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tadqiqot
-        fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'status', 'center_id', 'order', 'created_at',
-                  'updated_at',)
+# class TadqiqotSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Tadqiqot
+#         fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'status', 'center_id', 'order', 'created_at',
+#                   'updated_at',)
 
 
 class AzolarsubSerializer(serializers.ModelSerializer):
@@ -44,8 +44,8 @@ class RasmSerializer(serializers.ModelSerializer):
                   'created_at', 'updated_at',)
 
 
-class VideoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Video
-        fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'link', 'file', 'center_id', 'status', 'order', 'created_at',
-                  'updated_at',)
+# class VideoSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Video
+#         fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'link', 'file', 'center_id', 'status', 'order', 'created_at',
+#                   'updated_at',)

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from qoshimcha_malumotlar.models import Institut_tarixi, Memory_hujjatlar, Elonlar, Aloqa, Karusel, Rahbariyat, \
+from qoshimcha_malumotlar.models import Institut_tarixi, Aloqa, Karusel, Rahbariyat, \
     Tashkiliy_tuzulma, Yangiliklar, Havolalar
 
 
@@ -11,16 +11,16 @@ class Institut_tarixiSerializer(serializers.ModelSerializer):
                   'updated_at',)
 
 
-class Memory_hujjatlarSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Memory_hujjatlar
-        fields = ('id', 'title_uz', 'title_ru', 'title_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
-
-
-class ElonlarSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Elonlar
-        fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'status', 'type', 'order', 'created_at', 'updated_at',)
+# class Memory_hujjatlarSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Memory_hujjatlar
+#         fields = ('id', 'title_uz', 'title_ru', 'title_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
+#
+#
+# class ElonlarSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Elonlar
+#         fields = ('id', 'title_uz', 'title_ru', 'title_en', 'content_uz', 'content_ru', 'content_en', 'file', 'status', 'type', 'order', 'created_at', 'updated_at',)
 
 
 class AloqaSerializer(serializers.ModelSerializer):

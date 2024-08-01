@@ -54,31 +54,31 @@ class Bolimlar_tarix(models.Model):
         return self.title or ''
 
 
-class Tadqiqot(models.Model):
-    title = models.CharField(max_length=255)
-    content = RichTextField(blank=True, null=True)
-    center_id = models.ForeignKey(Markazlar_bolimlar, on_delete=models.CASCADE, related_name='tadqiqot', blank=True,
-                                  null=True)
-    file = models.FileField(upload_to='media/Tadqiqot/files/', blank=True, null=True)
-    STATUS_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
-    ]
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='published',
-    )
-    order = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = 'Tadqiqot'
-        verbose_name_plural = 'Tadqiqot'
-
-    def __str__(self):
-        return self.title or ''
+# class Tadqiqot(models.Model):
+#     title = models.CharField(max_length=255)
+#     content = RichTextField(blank=True, null=True)
+#     center_id = models.ForeignKey(Markazlar_bolimlar, on_delete=models.CASCADE, related_name='tadqiqot', blank=True,
+#                                   null=True)
+#     file = models.FileField(upload_to='media/Tadqiqot/files/', blank=True, null=True)
+#     STATUS_CHOICES = [
+#         ('published', 'Published'),
+#         ('not_published', 'Not Published'),
+#     ]
+#     status = models.CharField(
+#         max_length=20,
+#         choices=STATUS_CHOICES,
+#         default='published',
+#     )
+#     order = models.IntegerField(default=0)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#
+#     class Meta:
+#         verbose_name = 'Tadqiqot'
+#         verbose_name_plural = 'Tadqiqot'
+#
+#     def __str__(self):
+#         return self.title or ''
 
 
 class Azolar(models.Model):
@@ -147,31 +147,31 @@ class Rasm(models.Model):
         return self.title or ''
 
 
-class Video(models.Model):
-    title = models.CharField(max_length=255)
-    content = RichTextField(blank=True, null=True)
-    link = models.URLField(verbose_name='link', blank=True, null=True)
-    center_id = models.ForeignKey(Markazlar_bolimlar,on_delete=models.CASCADE, related_name='video', blank=True,
-                                  null=True)
-    file = models.FileField(upload_to='media/Rasm/files/', blank=True, null=True)
-    STATUS_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
-    ]
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='published',
-    )
-    order = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name = 'Video'
-        verbose_name_plural = 'Videos'
-
-    def __str__(self):
-        return self.title or ''
+# class Video(models.Model):
+#     title = models.CharField(max_length=255)
+#     content = RichTextField(blank=True, null=True)
+#     link = models.URLField(verbose_name='link', blank=True, null=True)
+#     center_id = models.ForeignKey(Markazlar_bolimlar,on_delete=models.CASCADE, related_name='video', blank=True,
+#                                   null=True)
+#     file = models.FileField(upload_to='media/Rasm/files/', blank=True, null=True)
+#     STATUS_CHOICES = [
+#         ('published', 'Published'),
+#         ('not_published', 'Not Published'),
+#     ]
+#     status = models.CharField(
+#         max_length=20,
+#         choices=STATUS_CHOICES,
+#         default='published',
+#     )
+#     order = models.IntegerField(default=0)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#
+#     class Meta:
+#         verbose_name = 'Video'
+#         verbose_name_plural = 'Videos'
+#
+#     def __str__(self):
+#         return self.title or ''
 
 

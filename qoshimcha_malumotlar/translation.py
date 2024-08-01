@@ -8,14 +8,14 @@ class Institut_tarixiTranslationOptions(TranslationOptions):
     fields = ('title', 'content', 'subcontent')
 
 
-@register(Memory_hujjatlar)
-class Memory_hujjatlarTranslationOptions(TranslationOptions):
-    fields = ('title', )
-
-
-@register(Elonlar)
-class ElonlarTranslationOptions(TranslationOptions):
-    fields = ('title', 'content',)
+# @register(Memory_hujjatlar)
+# class Memory_hujjatlarTranslationOptions(TranslationOptions):
+#     fields = ('title', )
+#
+#
+# @register(Elonlar)
+# class ElonlarTranslationOptions(TranslationOptions):
+#     fields = ('title', 'content',)
 
 
 @register(Karusel)

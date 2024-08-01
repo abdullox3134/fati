@@ -29,64 +29,64 @@ class Institut_tarixi(models.Model):
         verbose_name_plural = 'Institut tarixi'
 
 
-class Memory_hujjatlar(models.Model):
-    title = models.CharField(max_length=255)
-    file = models.FileField(upload_to='media/memory_hujjatlar/files/', blank=True, null=True)
-    STATUS_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
-    ]
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='published',
-    )
-    order = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Memory hujjat'
-        verbose_name_plural = 'Memory hujjatlar'
-
-
-class Elonlar(models.Model):
-    title = models.CharField(max_length=255)
-    content = RichTextField(blank=True, null=True)
-    file = models.FileField(upload_to='media/elonlar/files/', blank=True, null=True)
-    STATUS_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
-    ]
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='published',
-    )
-    TYPE_CHOICES = [
-        ('KENGASH', 'Kengash'),
-        ('DOKTORANTURA', 'Doktorantura'),
-        ('SEMINAR', 'Seminar'),
-    ]
-    type = models.CharField(
-        max_length=20,
-        choices=TYPE_CHOICES,
-        default='KENGASH',
-    )
-    order = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Elon'
-        verbose_name_plural = 'Elonlar'
-
+# class Memory_hujjatlar(models.Model):
+#     title = models.CharField(max_length=255)
+#     file = models.FileField(upload_to='media/memory_hujjatlar/files/', blank=True, null=True)
+#     STATUS_CHOICES = [
+#         ('published', 'Published'),
+#         ('not_published', 'Not Published'),
+#     ]
+#     status = models.CharField(
+#         max_length=20,
+#         choices=STATUS_CHOICES,
+#         default='published',
+#     )
+#     order = models.IntegerField(default=0)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#
+#     def __str__(self):
+#         return self.title
+#
+#     class Meta:
+#         verbose_name = 'Memory hujjat'
+#         verbose_name_plural = 'Memory hujjatlar'
+#
+#
+# class Elonlar(models.Model):
+#     title = models.CharField(max_length=255)
+#     content = RichTextField(blank=True, null=True)
+#     file = models.FileField(upload_to='media/elonlar/files/', blank=True, null=True)
+#     STATUS_CHOICES = [
+#         ('published', 'Published'),
+#         ('not_published', 'Not Published'),
+#     ]
+#     status = models.CharField(
+#         max_length=20,
+#         choices=STATUS_CHOICES,
+#         default='published',
+#     )
+#     TYPE_CHOICES = [
+#         ('KENGASH', 'Kengash'),
+#         ('DOKTORANTURA', 'Doktorantura'),
+#         ('SEMINAR', 'Seminar'),
+#     ]
+#     type = models.CharField(
+#         max_length=20,
+#         choices=TYPE_CHOICES,
+#         default='KENGASH',
+#     )
+#     order = models.IntegerField(default=0)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+#
+#     def __str__(self):
+#         return self.title
+#
+#     class Meta:
+#         verbose_name = 'Elon'
+#         verbose_name_plural = 'Elonlar'
+#
 
 class Aloqa(models.Model):
     faks = models.CharField(max_length=255, verbose_name='Faks', blank=True, null=True)

@@ -4,9 +4,9 @@ from rest_framework import filters
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 
-from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix, Tadqiqot, Azolar, Rasm, Video
+from markazlar_va_bolimlar.models import Markazlar_bolimlar, Bolimlar_tarix,  Azolar, Rasm
 from markazlar_va_bolimlar.serializers import Markazlar_bolimlarSerializer, Bolimlar_tarixSerializer, \
-    TadqiqotSerializer, AzolarSerializer, RasmSerializer, VideoSerializer
+     AzolarSerializer, RasmSerializer
 from xalqaro_aloqalar.pagination import ResultsSetPagination
 
 
@@ -44,21 +44,21 @@ def bolimlar_tarixdetail(request, pk):
     return Response(serializer.data)
 
 
-class TadqiqotListView(ListAPIView):
-    search_fields = ['title']
-    filter_backends = (filters.SearchFilter,)
-    serializer_class = TadqiqotSerializer
-    pagination_class = ResultsSetPagination
-
-    def get_queryset(self):
-        return Tadqiqot.objects.all().order_by('order')
-
-
-@api_view(['GET'])
-def tadqiqotdetail(request, pk):
-    tadqiqot = get_object_or_404(Tadqiqot, pk=pk)
-    serializer = TadqiqotSerializer(tadqiqot, context={'request': request})
-    return Response(serializer.data)
+# class TadqiqotListView(ListAPIView):
+#     search_fields = ['title']
+#     filter_backends = (filters.SearchFilter,)
+#     serializer_class = TadqiqotSerializer
+#     pagination_class = ResultsSetPagination
+#
+#     def get_queryset(self):
+#         return Tadqiqot.objects.all().order_by('order')
+#
+#
+# @api_view(['GET'])
+# def tadqiqotdetail(request, pk):
+#     tadqiqot = get_object_or_404(Tadqiqot, pk=pk)
+#     serializer = TadqiqotSerializer(tadqiqot, context={'request': request})
+#     return Response(serializer.data)
 
 
 class AzolarListView(ListAPIView):
@@ -95,18 +95,18 @@ def rasmdetail(request, pk):
     return Response(serializer.data)
 
 
-class VideoListView(ListAPIView):
-    search_fields = ['title']
-    filter_backends = (filters.SearchFilter,)
-    serializer_class = VideoSerializer
-    pagination_class = ResultsSetPagination
+# class VideoListView(ListAPIView):
+#     search_fields = ['title']
+#     filter_backends = (filters.SearchFilter,)
+#     serializer_class = VideoSerializer
+#     pagination_class = ResultsSetPagination
+#
+#     def get_queryset(self):
+#         return Video.objects.all().order_by('order')
+#
 
-    def get_queryset(self):
-        return Video.objects.all().order_by('order')
-
-
-@api_view(['GET'])
-def videodetail(request, pk):
-    video = get_object_or_404(Video, pk=pk)
-    serializer = VideoSerializer(video, context={'request': request})
-    return Response(serializer.data)
+# @api_view(['GET'])
+# def videodetail(request, pk):
+#     video = get_object_or_404(Video, pk=pk)
+#     serializer = VideoSerializer(video, context={'request': request})
+#     return Response(serializer.data)
