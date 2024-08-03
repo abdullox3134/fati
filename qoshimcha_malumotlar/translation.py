@@ -25,7 +25,7 @@ class KaruselTranslationOptions(TranslationOptions):
 
 @register(Rahbariyat)
 class RahbariyatTranslationOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ('title', 'position', 'degree',)
 
 
 @register(Tashkiliy_tuzulma)

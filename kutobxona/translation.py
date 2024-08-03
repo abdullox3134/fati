@@ -15,7 +15,7 @@ class DissertationsAndAbstractsTranslationOptions(TranslationOptions):
 
 @register(Editor)
 class EditorTranslationOptions(TranslationOptions):
-    fields = ('title', 'content', )
+    fields = ('title', 'content', 'position', 'degree', 'sphere')
 
 
 @register(Archive)

@@ -91,10 +91,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
+#
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+#
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -141,7 +141,7 @@ LANGUAGE_CODE = 'uz'
 
 LANGUAGES = (
     ('uz', _('Uzbek')),
-    ('ru', _('Russian')),
+    # ('ru', _('Russian')),
     ('en', _('English')),
 )
 

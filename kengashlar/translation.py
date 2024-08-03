@@ -41,7 +41,7 @@ class Yosh_olimlarTranslationOptions(TranslationOptions):
 
 @register(Yosh_olimlar_azolari)
 class Yosh_olimlar_azolariTranslationOptions(TranslationOptions):
-    fields = ('title', 'position', 'degree', 'contact', )
+    fields = ('title', 'position', 'degree',)
 
 
 @register(Maruzalar)

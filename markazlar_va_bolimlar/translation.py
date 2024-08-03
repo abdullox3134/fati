@@ -20,7 +20,7 @@ class Bolimlar_tarixiTranslationOptions(TranslationOptions):
 
 @register(Azolar)
 class AzolariTranslationOptions(TranslationOptions):
-    fields = ('title', 'content',)
+    fields = ('title', 'content', 'academic_degree', 'position')
 
 
 @register(Azolarsub)

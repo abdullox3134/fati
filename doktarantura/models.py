@@ -54,7 +54,9 @@ class Malakaviy_imtihon(models.Model):
 
 class Doktarantura(models.Model):
     title = models.CharField(max_length=255)
-    content = RichTextField(blank=True, null=True)
+    mehnat_faolyati = RichTextField(blank=True, null=True)
+    ilimiy_faolyati = RichTextField(blank=True, null=True)
+    asarlar = RichTextField(blank=True, null=True)
     file = models.FileField(upload_to='media/Doktarantura/files/', blank=True, null=True)
     TYPE_CHOICES = [
         ('doctaurant', 'Doctaurant'),
