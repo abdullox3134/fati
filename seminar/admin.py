@@ -14,7 +14,7 @@ class Seminar_turlariAdmin(admin.ModelAdmin):
 class SeminarAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
     search_fields = ('title',)
-    fields = ['title_uz', 'title_en', 'subcontent_uz', 'subcontent_en', 'subcontent_ru', 'seminar_id',
+    fields = ['title_uz', 'title_en', 'subcontent_uz', 'subcontent_en', 'seminar_id',
               'status', 'order',]
 
 
