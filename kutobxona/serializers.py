@@ -35,7 +35,6 @@
 #         model = Requirements
 #         fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'sub_content', 'file', 'status', 'order',
 #                   'created_at', 'updated_at')
-
 from rest_framework import serializers
 from kutobxona.models import Maqola, Tahrirchi, ArxivSon, Avtoreferat, Manba, ElektronKitob
 
@@ -49,18 +48,16 @@ class TahrirchiSerializer(serializers.ModelSerializer):
 class ArxivSonSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArxivSon
-        fields = ['content_uz', 'content_en', 'file_url', 'created_at', 'updated_at']
+        fields = ['content', 'file_url', 'created_at', 'updated_at']
 
 
 class MaqolaSerializer(serializers.ModelSerializer):
-    tahrirchi = TahrirchiSerializer(many=True)
-    arxiv_son = ArxivSonSerializer(many=True)
+    tahrirchilar = TahrirchiSerializer(many=True, read_only=True)
+    arxiv_sonlar = ArxivSonSerializer(many=True, read_only=True)
 
     class Meta:
         model = Maqola
-
-        # fields = ('content_uz', 'content_en', 'tahrirchilar', 'arxiv_sonlar', 'tahrirchi', 'arxiv_son', 'created_at',
-        #           'updated_at')
+        fields = ['content', 'tahrirchilar', 'arxiv_sonlar', 'created_at', 'updated_at']
 
 
 class AvtoreferatSerializer(serializers.ModelSerializer):
