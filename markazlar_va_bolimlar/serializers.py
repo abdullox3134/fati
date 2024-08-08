@@ -72,7 +72,7 @@ class SliderSerializer(serializers.ModelSerializer):
 class XodimlarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Xodimlar
-        fields = '__all__'
+        fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en',)
 
 
 class MarkazlarBolimlarSerializer(serializers.ModelSerializer):
@@ -82,4 +82,5 @@ class MarkazlarBolimlarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MarkazlarBolimlar
-        fields = '__all__'
+        fields = ('id', 'tarix_uz', 'tarix_en', 'xodimlar', 'fotogalereya', 'slider', 'status', 'order',
+                  'created_at', 'updated_at')

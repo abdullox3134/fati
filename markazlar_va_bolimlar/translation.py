@@ -50,4 +50,4 @@ class XodimlarTranslationOptions(TranslationOptions):
 
 @register(MarkazlarBolimlar)
 class MarkazlarBolimlarTranslationOptions(TranslationOptions):
-    fields = ('tarixi',)
+    fields = ('tarix',)

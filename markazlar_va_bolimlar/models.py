@@ -38,7 +38,7 @@ class Xodimlar(models.Model):
 
 
 class MarkazlarBolimlar(models.Model):
-    tarixi = RichTextField(blank=True, null=True)
+    tarix = RichTextField(blank=True, null=True)
     xodimlar = models.ManyToManyField(Xodimlar, related_name='markazlar_bolimlar', blank=True, null=True)
     fotogalereya = models.ManyToManyField(Fotogalereya, related_name='markazlar_bolimlar', blank=True, null=True)
     slider = models.ManyToManyField(Slider, related_name='markazlar_bolimlar', blank=True, null=True)

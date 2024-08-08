@@ -65,7 +65,7 @@ class SliderAdmin(admin.ModelAdmin):
 
 class XodimlarAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'lavozim', 'ilmiy_daraja')
-    search_fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en',)
+    search_fields = ('name',)
     fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en',)
 
 
@@ -74,7 +74,7 @@ class MarkazlarBolimlarAdmin(admin.ModelAdmin):
     search_fields = ('status', 'order')
     list_filter = ('status', 'created_at', 'updated_at')
     filter_horizontal = ('xodimlar', 'fotogalereya', 'slider')
-    fields = ('xodimlar', 'fotogalereya', 'slider', 'status', 'order',)
+    fields = ('tarix_uz', 'tarix_en', 'xodimlar', 'fotogalereya', 'slider', 'status', 'order',)
 
 
 admin.site.register(Fotogalereya, FotogalereyaAdmin)
