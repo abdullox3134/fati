@@ -1,22 +1,24 @@
-# from rest_framework import serializers
+from rest_framework import serializers
 #
 # from kengashlar.models import Institut_ken_azolari, Ilmiy_kengash_majlis, Qabul_korib_gan_dissertatsiya, \
 #     Shifr_va_passport, Dissertatsiya_va_avtoref, Dissertatsiya_fayllar, Yosh_olimlar, Yosh_olimlar_azolari, Maruzalar
 #
-#
-# class Institut_ken_azolariSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Institut_ken_azolari
-#         fields = ('id', 'title_uz', 'title_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
-#
-#
-# class Ilmiy_kengash_majlisSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Ilmiy_kengash_majlis
-#         fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'subcontent', 'file', 'date', 'status', 'order', 'created_at',
-#                   'updated_at',)
-#
-#
+from .models import Ilmiy_kengash_majlis, Institut_ken_azolari, Yosh_olimlar
+
+
+class Institut_ken_azolariSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Institut_ken_azolari
+        fields = ('id', 'title_uz', 'title_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
+
+
+class Ilmiy_kengash_majlisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ilmiy_kengash_majlis
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'subcontent', 'file', 'date', 'status', 'order', 'created_at',
+                  'updated_at',)
+
+
 # class Qabul_korib_gan_dissertatsiyaSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Qabul_korib_gan_dissertatsiya
@@ -41,11 +43,11 @@
 #         fields = ('id', 'title_uz', 'title_en', 'content_uz',  'content_en', 'file', 'base_file', 'status', 'order', 'created_at', 'updated_at',)
 #
 #
-# class Yosh_olimlarSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Yosh_olimlar
-#         fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
-#
+class Yosh_olimlarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Yosh_olimlar
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en', 'file', 'status', 'order', 'created_at', 'updated_at',)
+
 #
 # class Yosh_olimlar_azolariSerializer(serializers.ModelSerializer):
 #     class Meta:

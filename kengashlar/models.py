@@ -1,57 +1,58 @@
 from ckeditor.fields import RichTextField
-# from django.db import models
+from django.db import models
 #
-#
-# class Institut_ken_azolari(models.Model):
-#     title = models.CharField(max_length=255)
-#     file = models.FileField(upload_to='media/institut_ken_azolari/files/', blank=True, null=True)
-#     STATUS_CHOICES = [
-#         ('published', 'Published'),
-#         ('not_published', 'Not Published'),
-#     ]
-#     status = models.CharField(
-#         max_length=20,
-#         choices=STATUS_CHOICES,
-#         default='published',
-#     )
-#     order = models.IntegerField(default=0)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name = 'Institut ken. azolari'
-#         verbose_name_plural = 'Institut ken. azolari'
-#
-#
-# class Ilmiy_kengash_majlis(models.Model):
-#     title = models.CharField(max_length=255)
-#     content = RichTextField(blank=True, null=True)
-#     subcontent = RichTextField(blank=True, null=True)
-#     file = models.FileField(upload_to='media/ilmiy_kengash_majlis/files/', blank=True, null=True)
-#     date = models.DateField(blank=True, null=True)
-#     STATUS_CHOICES = [
-#         ('published', 'Published'),
-#         ('not_published', 'Not Published'),
-#     ]
-#     status = models.CharField(
-#         max_length=20,
-#         choices=STATUS_CHOICES,
-#         default='published',
-#     )
-#     order = models.IntegerField(default=0)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name = 'Ilmiy kengash majlis'
-#         verbose_name_plural = 'Ilmiy kengash majlis'
-#
+
+
+class Institut_ken_azolari(models.Model):
+    title = models.CharField(max_length=255)
+    file = models.FileField(upload_to='media/institut_ken_azolari/files/', blank=True, null=True)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Institut ken. azolari'
+        verbose_name_plural = 'Institut ken. azolari'
+
+
+class Ilmiy_kengash_majlis(models.Model):
+    title = models.CharField(max_length=255)
+    content = RichTextField(blank=True, null=True)
+    subcontent = RichTextField(blank=True, null=True)
+    file = models.FileField(upload_to='media/ilmiy_kengash_majlis/files/', blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Ilmiy kengash majlis'
+        verbose_name_plural = 'Ilmiy kengash majlis'
+
 #
 # class Qabul_korib_gan_dissertatsiya(models.Model):
 #     title = models.CharField(max_length=255)
@@ -151,32 +152,31 @@ from ckeditor.fields import RichTextField
 #     class Meta:
 #         verbose_name = 'Dissertatsiya fayllar'
 #         verbose_name_plural = 'Dissertatsiya fayllar'
-#
-#
-# class Yosh_olimlar(models.Model):
-#     title = models.CharField(max_length=255)
-#     content = RichTextField(blank=True, null=True)
-#     file = models.FileField(upload_to='media/yosh_olimlar/files/', blank=True, null=True)
-#     STATUS_CHOICES = [
-#         ('published', 'Published'),
-#         ('not_published', 'Not Published'),
-#     ]
-#     status = models.CharField(
-#         max_length=20,
-#         choices=STATUS_CHOICES,
-#         default='published',
-#     )
-#     order = models.IntegerField(default=0)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name = 'Yosh olim'
-#         verbose_name_plural = 'Yosh olimlar'
-#
+
+class Yosh_olimlar(models.Model):
+    title = models.CharField(max_length=255)
+    content = RichTextField(blank=True, null=True)
+    file = models.FileField(upload_to='media/yosh_olimlar/files/', blank=True, null=True)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Yosh olim'
+        verbose_name_plural = 'Yosh olimlar'
+
 #
 # class Yosh_olimlar_azolari(models.Model):
 #     title = models.CharField(max_length=255)

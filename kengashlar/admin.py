@@ -1,24 +1,26 @@
-# from django.contrib import admin
+from django.contrib import admin
 #
 # from kengashlar.models import Institut_ken_azolari, Ilmiy_kengash_majlis, Qabul_korib_gan_dissertatsiya, \
 #     Shifr_va_passport, Dissertatsiya_va_avtoref, Dissertatsiya_fayllar, Yosh_olimlar, Yosh_olimlar_azolari, Maruzalar
 #
-#
-# @admin.register(Institut_ken_azolari)
-# class Institut_ken_azolariAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
-#     fields = ('title_uz', 'title_en', 'file', 'status', 'order',)
-#
-#
-# @admin.register(Ilmiy_kengash_majlis)
-# class Ilmiy_kengash_majlisAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
-#     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'subcontent_uz',
-#               'subcontent_en', 'file', 'date', 'status', 'order',)
-#
-#
+from .models import Institut_ken_azolari, Ilmiy_kengash_majlis, Yosh_olimlar
+
+
+@admin.register(Institut_ken_azolari)
+class Institut_ken_azolariAdmin(admin.ModelAdmin):
+    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+    search_fields = ('title',)
+    fields = ('title_uz', 'title_en', 'file', 'status', 'order',)
+
+
+@admin.register(Ilmiy_kengash_majlis)
+class Ilmiy_kengash_majlisAdmin(admin.ModelAdmin):
+    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+    search_fields = ('title',)
+    fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'subcontent_uz',
+              'subcontent_en', 'file', 'date', 'status', 'order',)
+
+
 # @admin.register(Qabul_korib_gan_dissertatsiya)
 # class Qabul_korib_gan_dissertatsiyaAdmin(admin.ModelAdmin):
 #     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
@@ -48,12 +50,12 @@
 #               'status', 'order',)
 #
 #
-# @admin.register(Yosh_olimlar)
-# class Yosh_olimlarAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
-#     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'file', 'status', 'order',)
-#
+@admin.register(Yosh_olimlar)
+class Yosh_olimlarAdmin(admin.ModelAdmin):
+    list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
+    search_fields = ('title',)
+    fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'file', 'status', 'order',)
+
 #
 # @admin.register(Yosh_olimlar_azolari)
 # class Yosh_olimlar_azolariAdmin(admin.ModelAdmin):
@@ -69,6 +71,7 @@
 #     search_fields = ('title',)
 #     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'subcontent_uz',
 #               'subcontent_en', 'file', 'data', 'status', 'order',)
+
 
 from django.contrib import admin
 from .models import Azolar, DissertatsiyaIshlar, Content

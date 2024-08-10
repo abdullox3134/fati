@@ -2,17 +2,19 @@ from modeltranslation.translator import TranslationOptions
 # from .models import Institut_ken_azolari, Ilmiy_kengash_majlis, Qabul_korib_gan_dissertatsiya, Shifr_va_passport, \
 # Dissertatsiya_va_avtoref, Dissertatsiya_fayllar, Yosh_olimlar, Yosh_olimlar_azolari, Maruzalar
 from modeltranslation.decorators import register
+from .models import Ilmiy_kengash_majlis, Institut_ken_azolari, Yosh_olimlar
+
+
+@register(Institut_ken_azolari)
+class Institut_ken_azolariTranslationOptions(TranslationOptions):
+    fields = ('title', )
 #
-#
-# @register(Institut_ken_azolari)
-# class Institut_ken_azolariTranslationOptions(TranslationOptions):
-#     fields = ('title', )
-#
-#
-# @register(Ilmiy_kengash_majlis)
-# class Ilmiy_kengash_majlisTranslationOptions(TranslationOptions):
-#     fields = ('title', 'content', 'subcontent',)
-#
+
+
+@register(Ilmiy_kengash_majlis)
+class Ilmiy_kengash_majlisTranslationOptions(TranslationOptions):
+    fields = ('title', 'content', 'subcontent',)
+
 #
 # @register(Qabul_korib_gan_dissertatsiya)
 # class Qabul_korib_gan_dissertatsiyaTranslationOptions(TranslationOptions):
@@ -34,10 +36,10 @@ from modeltranslation.decorators import register
 #     fields = ('title', 'content', )
 #
 #
-# @register(Yosh_olimlar)
-# class Yosh_olimlarTranslationOptions(TranslationOptions):
-#     fields = ('title', 'content', )
-#
+@register(Yosh_olimlar)
+class Yosh_olimlarTranslationOptions(TranslationOptions):
+    fields = ('title', 'content', )
+
 #
 # @register(Yosh_olimlar_azolari)
 # class Yosh_olimlar_azolariTranslationOptions(TranslationOptions):

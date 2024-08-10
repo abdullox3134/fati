@@ -32,14 +32,27 @@ from django.urls import path
 # ]
 from .views import (AzolarListView, Azolardetail, DissertatsiyaIshlarListView, DissertatsiyaIshlardetail,
                     ContentListView, Contentdetail)
+from .views import (Institut_ken_azolariListView, institut_ken_azolaridetail, Yosh_olimlarListView, yosh_olimlardetail,
+                    ilmiy_kengash_majlisdetail, Ilmiy_kengash_majlisListView)
+
 
 urlpatterns = [
-    path('institut-ken-azolari/', AzolarListView.as_view(), name='institut_ken_azolari-list'),
-    path('institut-ken-azolari/<int:pk>/', Azolardetail, name='institut_ken_azolari-detail'),
+    path('azolar/', AzolarListView.as_view(), name='azolar-list'),
+    path('azolar/<int:pk>/', Azolardetail, name='azolar-detail'),
 
     path('DissertatsiyaIshlar/', DissertatsiyaIshlarListView.as_view(), name='DissertatsiyaIshlar-list'),
     path('DissertatsiyaIshlar/<int:pk>/', DissertatsiyaIshlardetail, name='DissertatsiyaIshlar-detail'),
 
     path('Content/', ContentListView.as_view(), name='Content-list'),
     path('Content/<int:pk>/', Contentdetail, name='Content-detail'),
+
+    path('yosh-olimlar/', Yosh_olimlarListView.as_view(), name='yosh_olimlar-list'),
+    path('yosh-olimlar/<int:pk>/', yosh_olimlardetail, name='yosh_olimlar-detail'),
+
+    path('institut-ken-azolari/', Institut_ken_azolariListView.as_view(), name='institut_ken_azolari-list'),
+    path('institut-ken-azolari/<int:pk>/', institut_ken_azolaridetail, name='institut_ken_azolari-detail'),
+
+    path('ilmiy_kengash_majlis/', Ilmiy_kengash_majlisListView.as_view(), name='ilmiy_kengash_majlis-list'),
+    path('ilmiy_kengash_majlis/<int:pk>/', ilmiy_kengash_majlisdetail, name='ilmiy_kengash_majlis'),
+
 ]
