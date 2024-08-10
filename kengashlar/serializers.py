@@ -67,7 +67,7 @@ from .models import Azolar, DissertatsiyaIshlar, Content
 class AzolarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Azolar
-        fields = ['name_uz', 'name_en', 'shifr', 'ish_joy_uz', 'ish_joy_en', 'lavozim_uz', 'lavozim_en',
+        fields = ['id', 'name_uz', 'name_en', 'shifr', 'ish_joy_uz', 'ish_joy_en', 'lavozim_uz', 'lavozim_en',
                   'ilmiy_darajasi_uz', 'ilmiy_darajasi_en', 'ilmiy_unvoni_uz', 'ilmiy_unvoni_en',
                   'created_at', 'updated_at', ]
 
@@ -75,7 +75,7 @@ class AzolarSerializer(serializers.ModelSerializer):
 class DissertatsiyaIshlarSerializer(serializers.ModelSerializer):
     class Meta:
         model = DissertatsiyaIshlar
-        fields = ['title_uz', 'title_en', 'file', 'isAccepted', 'created_at', 'updated_at', ]
+        fields = ['id', 'title_uz', 'title_en', 'file', 'isAccepted', 'created_at', 'updated_at', ]
 
 
 class ContentSerializer(serializers.ModelSerializer):
@@ -84,4 +84,4 @@ class ContentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ['azolar', 'content_uz', 'content_en', 'dissertatsiya_ishlar', 'created_at', 'updated_at', ]
+        fields = ['id', 'azolar', 'content_uz', 'content_en', 'dissertatsiya_ishlar', 'created_at', 'updated_at', ]
