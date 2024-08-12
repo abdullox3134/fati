@@ -40,7 +40,7 @@ class Xalqaro_sayohatlarAdmin(admin.ModelAdmin):
 class TadqiqotAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
     search_fields = ('title',)
-    fields = ['title_uz', 'title_en', 'content_uz', 'content_en', 'img_file', 'status', 'order',]
+    fields = ['title_uz', 'title_en', 'content_uz', 'content_en', 'img_file', 'tadqiqot', 'status', 'order', ]
 
 
 @admin.register(Kelganlar)
@@ -48,4 +48,4 @@ class KelganlarAdmin(admin.ModelAdmin):
     list_display = ('ism', 'status', 'created_at', 'updated_at', 'order',)
     list_filter = ('kelgan_yil',)
     search_fields = ('ism',)
-    fields = ['tadqiqot', 'kelgan_yil', 'ism_uz', 'ism_en', 'ish_joy_uz', 'ish_joy_en', 'status', 'order',]
+    fields = ['kelgan_yil', 'ism_uz', 'ism_en', 'ish_joy_uz', 'ish_joy_en', 'status', 'order',]

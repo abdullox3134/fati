@@ -106,33 +106,7 @@ class Xalqaro_sayohatlar(models.Model):
         verbose_name_plural = 'Xalqaro sayohatlar'
 
 
-class Tadqiqot(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
-    img_file = models.ImageField(upload_to='media/Tadqiqot/images/')  # 'images/' papkasi ichiga saqlanadi
-    STATUS_CHOICES = [
-        ('published', 'Published'),
-        ('not_published', 'Not Published'),
-    ]
-    status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default='published',
-    )
-    order = models.IntegerField(default=0)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Tadqiqot'
-        verbose_name_plural = 'Tadqiqot'
-
-
 class Kelganlar(models.Model):
-    tadqiqot = models.ForeignKey(Tadqiqot, related_name='kelganlarlar', on_delete=models.CASCADE,  blank=True, null=True)
     kelgan_yil = models.CharField(max_length=255)
     ism = models.CharField(max_length=255)
     ish_joy = models.CharField(max_length=255)
@@ -155,5 +129,32 @@ class Kelganlar(models.Model):
     class Meta:
         verbose_name = 'Kelganlar'
         verbose_name_plural = 'Kelganlar'
+
+
+class Tadqiqot(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    img_file = models.ImageField(upload_to='media/Tadqiqot/images/')  # 'images/' papkasi ichiga saqlanadi
+    tadqiqot = models.ManyToManyField(Kelganlar, related_name='kelganlarlar', blank=True, null=True)
+
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Tadqiqot'
+        verbose_name_plural = 'Tadqiqot'
 
 
