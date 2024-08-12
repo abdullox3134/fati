@@ -17,7 +17,7 @@ class KelganlarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kelganlar
         fields = ['id', 'tadqiqot', 'kelgan_yil', 'ism_uz', 'ism_en', 'ish_joy_uz', 'ish_joy_en', 'status',
-                  'created_at', 'updated_at', 'order', 'kelganlarlar']
+                  'created_at', 'updated_at', 'order',]
 
 
 class Xamkor_tashkilotSerializer(serializers.ModelSerializer):

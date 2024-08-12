@@ -2,8 +2,12 @@ from django.contrib import admin
 #
 # from kengashlar.models import Institut_ken_azolari, Ilmiy_kengash_majlis, Qabul_korib_gan_dissertatsiya, \
 #     Shifr_va_passport, Dissertatsiya_va_avtoref, Dissertatsiya_fayllar, Yosh_olimlar, Yosh_olimlar_azolari, Maruzalar
-#
+
+
+
 from .models import Institut_ken_azolari, Ilmiy_kengash_majlis, Yosh_olimlar
+from django.contrib import admin
+from .models import Azolar, DissertatsiyaIshlar, Content
 
 
 @admin.register(Institut_ken_azolari)
@@ -38,14 +42,14 @@ class Ilmiy_kengash_majlisAdmin(admin.ModelAdmin):
 # @admin.register(Dissertatsiya_va_avtoref)
 # class Dissertatsiya_va_avtorefAdmin(admin.ModelAdmin):
 #     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
+#     search_fields = ('title')
 #     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'status', 'order',)
 #
 #
 # @admin.register(Dissertatsiya_fayllar)
 # class Dissertatsiya_fayllarAdmin(admin.ModelAdmin):
 #     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
+#     search_fields = ('title')
 #     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'file', 'base_file',
 #               'status', 'order',)
 #
@@ -73,8 +77,6 @@ class Yosh_olimlarAdmin(admin.ModelAdmin):
 #               'subcontent_en', 'file', 'data', 'status', 'order',)
 
 
-from django.contrib import admin
-from .models import Azolar, DissertatsiyaIshlar, Content
 
 
 @admin.register(Azolar)

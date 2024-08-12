@@ -132,7 +132,7 @@ class Tadqiqot(models.Model):
 
 
 class Kelganlar(models.Model):
-    tadqiqot = models.ForeignKey(Tadqiqot, related_name='kelganlarlar', on_delete=models.CASCADE)
+    tadqiqot = models.ForeignKey(Tadqiqot, related_name='kelganlarlar', on_delete=models.CASCADE,  blank=True, null=True)
     kelgan_yil = models.CharField(max_length=255)
     ism = models.CharField(max_length=255)
     ish_joy = models.CharField(max_length=255)
