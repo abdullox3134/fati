@@ -38,21 +38,20 @@ from . models import Maqola, Tahrirchi, ArxivSon, Avtoreferat, Manba, ElektronKi
 class TalabalarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Talablar
-        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'sub_content_uz', 'sub_content_uz', 'file',
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'sub_content_uz', 'sub_content_en', 'file',
                   'status', 'order', 'created_at', 'Updated_at')
-
 
 
 class TahrirchiSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tahrirchi
-        fields = ['title_uz', 'title_en', 'ish_joyi', 'lavozimi', 'status', 'order', 'created_at', 'Updated_at',]
+        fields = ['id', 'title_uz', 'title_en', 'ish_joyi', 'lavozimi', 'status', 'order', 'created_at', 'Updated_at',]
 
 
 class ArxivSonSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArxivSon
-        fields = ['content', 'file_url', 'status', 'order' 'created_at', 'Updated_at']
+        fields = ['id', 'content_uz', 'content_en', 'file_url', 'status', 'order', 'created_at', 'Updated_at']
 
 
 class MaqolaSerializer(serializers.ModelSerializer):
@@ -61,25 +60,26 @@ class MaqolaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Maqola
-        fields = ['content', 'tahrirchilar', 'arxiv_sonlar', 'status', 'order' 'created_at', 'Updated_at']
+        fields = ['id', 'content_uz', 'content_en', 'tahrirchilar', 'arxiv_sonlar', 'status', 'order',
+                  'created_at', 'Updated_at']
 
 
 class AvtoreferatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Avtoreferat
-        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order' 'created_at', 'Updated_at']
+        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order', 'created_at', 'Updated_at']
 
 
 class ElektronKitobSerializer(serializers.ModelSerializer):
     class Meta:
         model = ElektronKitob
-        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order''created_at', 'Updated_at']
+        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order', 'created_at', 'Updated_at']
 
 
 class ManbaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Manba
-        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order' 'created_at', 'Updated_at']
+        fields = ['title_uz', 'title_en', 'cover_img', 'file', 'status', 'order', 'created_at', 'Updated_at']
 
 
 class ArxivMenuSerializer(serializers.ModelSerializer):
@@ -87,7 +87,7 @@ class ArxivMenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ArxivMenu
-        field = ['id', 'davr_oraligi', 'content', 'status', 'order', 'created_at', 'Updated_at',]
+        fields = ['id', 'davr_oraligi', 'content_uz', 'content_en', 'status', 'order', 'created_at', 'Updated_at',]
 
 
 class ArxivSerializer(serializers.ModelSerializer):

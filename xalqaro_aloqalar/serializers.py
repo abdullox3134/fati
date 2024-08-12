@@ -4,20 +4,20 @@ from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_s
 from .models import Tadqiqot, Kelganlar
 
 
-class KelganlarSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Kelganlar
-        fields = ['id', 'title_uz', 'title_en', 'content_uz', 'content_en', 'img_file', 'status', 'order',
-                  'created_at', 'updated_at',]
-
-
 class TadqiqotSerializer(serializers.ModelSerializer):
-    kelganlarlar = KelganlarSerializer(many=True, read_only=True)
-
     class Meta:
         model = Tadqiqot
+        fields = ['id', 'title_uz', 'title_en', 'content_uz', 'content_en', 'img_file', 'status', 'order',
+                  'created_at', 'updated_at', ]
+
+
+class KelganlarSerializer(serializers.ModelSerializer):
+    kelganlarlar = TadqiqotSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Kelganlar
         fields = ['id', 'tadqiqot', 'kelgan_yil', 'ism_uz', 'ism_en', 'ish_joy_uz', 'ish_joy_en', 'status',
-                  'created_at', 'updated_at', 'order']
+                  'created_at', 'updated_at', 'order', 'kelganlarlar']
 
 
 class Xamkor_tashkilotSerializer(serializers.ModelSerializer):

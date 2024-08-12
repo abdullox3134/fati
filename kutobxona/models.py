@@ -211,7 +211,6 @@ class Maqola(models.Model):
         verbose_name_plural = 'Maqolalar'
 
 
-
 class Avtoreferat(models.Model):
     title = models.CharField(max_length=255)
     cover_img = models.ImageField(upload_to='media/avtoreferatlar/covers/', blank=True, null=True)
@@ -235,7 +234,6 @@ class Avtoreferat(models.Model):
     class Meta:
         verbose_name = 'Avtoreferat'
         verbose_name_plural = 'Avtoreferat'
-
 
 
 class ElektronKitob(models.Model):
@@ -263,8 +261,6 @@ class ElektronKitob(models.Model):
         verbose_name_plural = 'ElektronKitoblar'
 
 
-
-
 class Manba(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
     cover_img = models.ImageField(upload_to='media/manbalar/covers/', blank=True, null=True)
@@ -288,8 +284,6 @@ class Manba(models.Model):
     class Meta:
         verbose_name = 'Manba'
         verbose_name_plural = 'Manbalar'
-
-
 
 
 class ArxivMenu(models.Model):
