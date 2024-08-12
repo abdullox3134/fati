@@ -170,6 +170,8 @@ def yosh_olimlardetail(request, pk):
 #     serializer = MaruzalarSerializer(maruzalar, context={'request': request})
 #     return Response(serializer.data)
 
+
+
 from .models import Azolar, DissertatsiyaIshlar, Content
 from .serializers import AzolarSerializer, DissertatsiyaIshlarSerializer, ContentSerializer
 from rest_framework import generics

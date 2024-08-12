@@ -1,12 +1,12 @@
 # from rest_framework.decorators import api_view
-# from rest_framework.generics import ListAPIView
-# from rest_framework import filters
+from rest_framework.generics import ListAPIView
+from rest_framework import filters
 # from django.shortcuts import get_object_or_404
 # from rest_framework.response import Response
 #
 # from kutobxona.models import Category, DissertationsAndAbstracts, Archive, Editor, Requirements
 # from kutobxona.serializers import CategorySerializer, DissertationsAndAbstractsSerializer, ArchiveSerializer, EditorSerializer, RequirementsSerializer
-# from xalqaro_aloqalar.pagination import ResultsSetPagination
+from kutobxona.pagination import ResultsSetPagination
 #
 #
 # class CategoryListView(ListAPIView):
@@ -76,23 +76,8 @@
 #     serializer = EditorSerializer(editor, context={'request': request})
 #     return Response(serializer.data)
 #
-#
-# class RequirementsListView(ListAPIView):
-#     search_fields = ['title']
-#     filter_backends = (filters.SearchFilter,)
-#     serializer_class = RequirementsSerializer
-#     pagination_class = ResultsSetPagination
-#
-#     def get_queryset(self):
-#         return Requirements.objects.all().order_by('order')
-#
-#
-# @api_view(['GET'])
-# def requirements_detail(request, pk):
-#     requirements = get_object_or_404(Requirements, pk=pk)
-#     serializer = RequirementsSerializer(requirements, context={'request': request})
-#     return Response(serializer.data)
-#
+from .models import Talablar, Arxiv,ArxivMenu
+from .serializers import TalabalarSerializer
 from rest_framework.generics import ListAPIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -101,6 +86,24 @@ from kutobxona.models import Maqola, Tahrirchi, ArxivSon, Manba, Avtoreferat, El
 from .serializers import (MaqolaSerializer, TahrirchiSerializer, ArxivSonSerializer,
                           AvtoreferatSerializer, ElektronKitobSerializer, ManbaSerializer)
 from .pagination import ResultsSetPagination
+from .serializers import ArxivSerializer, ArxivMenuSerializer
+
+
+class TalablarListView(ListAPIView):
+    search_fields = ['title']
+    filter_backends = (filters.SearchFilter,)
+    serializer_class = TalabalarSerializer
+    pagination_class = ResultsSetPagination
+
+    def get_queryset(self):
+        return Talablar.objects.all().order_by('order')
+
+
+@api_view(['GET'])
+def Talablar_detail(request, pk):
+    requirements = get_object_or_404(Talablar, pk=pk)
+    serializer = TalabalarSerializer(requirements, context={'request': request})
+    return Response(serializer.data)
 
 
 class MaqolaListCreateView(ListAPIView):
@@ -178,6 +181,32 @@ class ManbaListCreateView(ListAPIView):
 def manba_detail_view(request, pk):
     manba = get_object_or_404(Manba, pk=pk)
     serializer = ManbaSerializer(manba, context={'request': request})
+    return Response(serializer.data)
+
+
+class ArxivMenuListCreateView(ListAPIView):
+    queryset = ArxivMenu.objects.all()
+    serializer_class = ArxivMenuSerializer
+    pagination_class = ResultsSetPagination
+
+
+@api_view(['GET'])
+def ArxivMenu_detail_view(request, pk):
+    manba = get_object_or_404(ArxivMenu, pk=pk)
+    serializer = ArxivMenuSerializer(manba, context={'request': request})
+    return Response(serializer.data)
+
+
+class ArxivListCreateView(ListAPIView):
+    queryset = Arxiv.objects.all()
+    serializer_class = ArxivSerializer
+    pagination_class = ResultsSetPagination
+
+
+@api_view(['GET'])
+def Arxiv_detail_view(request, pk):
+    manba = get_object_or_404(Arxiv, pk=pk)
+    serializer = ArxivSerializer(manba, context={'request': request})
     return Response(serializer.data)
 
 

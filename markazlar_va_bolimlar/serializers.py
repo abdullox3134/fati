@@ -72,7 +72,8 @@ class SliderSerializer(serializers.ModelSerializer):
 class XodimlarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Xodimlar
-        fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en',)
+        fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en', 'status',
+                  'order', 'created_at', 'updated_at')
 
 
 class MarkazlarBolimlarSerializer(serializers.ModelSerializer):

@@ -242,30 +242,75 @@ class Azolar(models.Model):
     lavozim = models.CharField(max_length=255)
     ilmiy_darajasi = models.CharField(max_length=255)
     ilmiy_unvoni = models.CharField(max_length=255)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Azolar'
+        verbose_name_plural = 'Azolar'
+
 
 class DissertatsiyaIshlar(models.Model):
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to='media/dissertatsiya_ishlar/files/')
     isAccepted = models.BooleanField(default=False)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'DissertatsiyaIshlar'
+        verbose_name_plural = 'DissertatsiyaIshlar'
+
+
+
 
 class Content(models.Model):
-    azolar = models.ManyToManyField(Azolar, related_name='contents', blank=True, null=True)
+    azolar = models.ManyToManyField(Azolar, related_name='contents', blank=True,)
     content = RichTextField(blank=True, null=True)
     dissertatsiya_ishlar = models.ManyToManyField(DissertatsiyaIshlar, related_name='contents', blank=True, null=True)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Content'
+        verbose_name_plural = 'Content'
+
 
 
 

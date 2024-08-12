@@ -35,7 +35,7 @@ from .views import (
     manba_detail_view,
 
 )
-
+from .views import Arxiv_detail_view, ArxivMenuListCreateView, ArxivMenu_detail_view, ArxivListCreateView
 
 from django.urls import path
 from .views import MaqolaListCreateView, maqola_detail_view, TahrirchiListCreateView, ArxivSonListCreateView
@@ -57,7 +57,14 @@ urlpatterns = [
     path('manba/', ManbaListCreateView.as_view(), name='Manba-list'),
     path('Manba/', manba_detail_view, name='Manba-detail'),
 
+    path('talablar/', ManbaListCreateView.as_view(), name='talablar-list'),
+    path('talablar/', manba_detail_view, name='talablar-detail'),
 
+    path('arxiv/', ArxivMenuListCreateView.as_view(), name='arxiv-list'),
+    path('arxiv/', ArxivMenu_detail_view, name='arxiv-detail'),
+
+    path('arxivmenu/', ArxivListCreateView.as_view(), name='arxivmenu-list'),
+    path('arxivmenu/', Arxiv_detail_view, name='arxivmenu-detail'),
 
 ]
 

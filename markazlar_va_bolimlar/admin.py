@@ -64,13 +64,13 @@ class SliderAdmin(admin.ModelAdmin):
 
 
 class XodimlarAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'lavozim', 'ilmiy_daraja')
+    list_display = ('name', 'lavozim', 'ilmiy_daraja',  'status', 'order', 'created_at', 'updated_at')
     search_fields = ('name',)
-    fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en',)
+    fields = ('name_uz', 'name_en', 'lavozim_uz', 'lavozim_en', 'ilmiy_daraja_uz', 'ilmiy_daraja_en', 'status', 'order')
 
 
 class MarkazlarBolimlarAdmin(admin.ModelAdmin):
-    list_display = ('status', 'order', 'created_at', 'updated_at')
+    list_display = ('status', 'order', 'created_at', 'updated_at', 'status', 'order',)
     search_fields = ('status', 'order')
     list_filter = ('status', 'created_at', 'updated_at')
     filter_horizontal = ('xodimlar', 'fotogalereya', 'slider')

@@ -1,7 +1,8 @@
 from modeltranslation.translator import TranslationOptions
 from modeltranslation.decorators import register
 
-from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_tadqiqot, Xalqaro_sayohatlar
+from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Tadqiqot, Xalqaro_sayohatlar, Kelganlar
+
 
 
 @register(Xamkor_tashkilot)
@@ -14,9 +15,14 @@ class Xamkor_loihalarTranslationOptions(TranslationOptions):
     fields = ('title', 'content', 'subcontent',)
 
 
-@register(Xalqaro_tadqiqot)
+@register(Tadqiqot)
 class Xalqaro_tadqiqotTranslationOptions(TranslationOptions):
-    fields = ('title', 'content', 'subcontent',)
+    fields = ('title', 'content',)
+
+
+@register(Kelganlar)
+class Xalqaro_tadqiqotTranslationOptions(TranslationOptions):
+    fields = ('ism', 'ish_joy',)
 
 
 @register(Xalqaro_sayohatlar)

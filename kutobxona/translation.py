@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions
-from .models import Avtoreferat, Manba, Maqola, ArxivSon, Tahrirchi, ElektronKitob
+from .models import Avtoreferat, Manba, Maqola, ArxivSon, Tahrirchi, ElektronKitob, ArxivMenu
 from modeltranslation.decorators import register
 #
 #
@@ -17,16 +17,17 @@ from modeltranslation.decorators import register
 # class EditorTranslationOptions(TranslationOptions):
 #     fields = ('title', 'content', 'position', 'degree', 'sphere')
 #
-#
-# @register(Archive)
-# class ArchiveTranslationOptions(TranslationOptions):
-#     fields = ('title', 'content', 'sub_content',)
-#
-#
-# @register(Requirements)
-# class RequirementsTranslationOptions(TranslationOptions):
-#     fields = ('title', 'content', 'sub_content',)
-#
+from .models import Talablar
+
+
+@register(ArxivMenu)
+class ArchiveTranslationOptions(TranslationOptions):
+    fields = ('content',)
+
+
+@register(Talablar)
+class RequirementsTranslationOptions(TranslationOptions):
+    fields = ('title', 'content', 'sub_content',)
 
 
 @register(Avtoreferat)

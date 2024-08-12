@@ -79,21 +79,21 @@ from .models import Azolar, DissertatsiyaIshlar, Content
 
 @admin.register(Azolar)
 class AzolarAdmin(admin.ModelAdmin):
-    list_display = ['name', 'shifr', 'ish_joy', 'lavozim', 'created_at', 'updated_at',]
+    list_display = ['name', 'shifr', 'ish_joy', 'lavozim', 'created_at', 'updated_at', 'order',]
     search_fields = ('name',)
     fields = ['name_uz', 'name_en', 'shifr', 'ish_joy_uz', 'ish_joy_en', 'lavozim_uz', 'lavozim_en',
-              'ilmiy_darajasi_uz', 'ilmiy_darajasi_en', 'ilmiy_unvoni_uz', 'ilmiy_unvoni_en']
+              'ilmiy_darajasi_uz', 'ilmiy_darajasi_en', 'ilmiy_unvoni_uz', 'ilmiy_unvoni_en', 'status', 'order',]
 
 
 @admin.register(DissertatsiyaIshlar)
 class DissertatsiyaIshlarAdmin(admin.ModelAdmin):
-    list_display = ['title', 'isAccepted', 'created_at', 'updated_at', ]
+    list_display = ['title', 'isAccepted', 'created_at', 'updated_at', 'order']
     search_fields = ('title',)
-    fields = ['title_uz', 'title_en', 'file', 'isAccepted']
+    fields = ['title_uz', 'title_en', 'file', 'isAccepted', 'status', 'order',]
 
 
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'created_at', 'updated_at', ]
+    list_display = ['created_at', 'updated_at', 'order', 'status',]
     filter_horizontal = ('azolar', 'dissertatsiya_ishlar')
-    fields = ['azolar', 'content_uz', 'content_en', 'dissertatsiya_ishlar']
+    fields = ['azolar', 'content_uz', 'content_en', 'dissertatsiya_ishlar', 'status', 'order',]
