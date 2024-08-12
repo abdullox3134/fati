@@ -45,7 +45,7 @@ class TadqiqotAdmin(admin.ModelAdmin):
 
 @admin.register(Kelganlar)
 class KelganlarAdmin(admin.ModelAdmin):
-    list_display = ('ism', 'status', 'created_at', 'updated_at', 'order', )
+    list_display = ('ism', 'status', 'created_at', 'updated_at', 'order',)
     list_filter = ('kelgan_yil',)
     search_fields = ('ism',)
     fields = ['tadqiqot', 'kelgan_yil', 'ism_uz', 'ism_en', 'ish_joy_uz', 'ish_joy_en', 'status', 'order',]

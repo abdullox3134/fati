@@ -12,7 +12,6 @@ class TadqiqotSerializer(serializers.ModelSerializer):
 
 
 class KelganlarSerializer(serializers.ModelSerializer):
-    kelganlarlar = TadqiqotSerializer(many=True, read_only=True)
 
     class Meta:
         model = Kelganlar

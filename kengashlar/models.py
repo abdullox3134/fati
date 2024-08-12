@@ -153,6 +153,7 @@ class Ilmiy_kengash_majlis(models.Model):
 #         verbose_name = 'Dissertatsiya fayllar'
 #         verbose_name_plural = 'Dissertatsiya fayllar'
 
+
 class Yosh_olimlar(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextField(blank=True, null=True)
