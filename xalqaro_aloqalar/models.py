@@ -135,7 +135,7 @@ class Tadqiqot(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextField(blank=True, null=True)
     img_file = models.ImageField(upload_to='media/Tadqiqot/images/', blank=True, null=True)
-    tadqiqot = models.ManyToManyField(Kelganlar, related_name='kelganlarlar', blank=True, null=True)
+    tadqiqot = models.ManyToManyField(Kelganlar, related_name='kelganlarlar',)
 
     STATUS_CHOICES = [
         ('published', 'Published'),
