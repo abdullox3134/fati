@@ -1,6 +1,5 @@
 from ckeditor.fields import RichTextField
 from django.db import models
-#
 
 
 class Institut_ken_azolari(models.Model):
@@ -292,7 +291,7 @@ class DissertatsiyaIshlar(models.Model):
 class Content(models.Model):
     azolar = models.ManyToManyField(Azolar, related_name='contents', blank=True,)
     content = RichTextField(blank=True, null=True)
-    dissertatsiya_ishlar = models.ManyToManyField(DissertatsiyaIshlar, related_name='contents', blank=True, null=True)
+    dissertatsiya_ishlar = models.ManyToManyField(DissertatsiyaIshlar, related_name='contents',)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),

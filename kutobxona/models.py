@@ -163,7 +163,7 @@ class Tahrirchi(models.Model):
 
 
 class ArxivSon(models.Model):
-    content = models.TextField(blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
     file_url = models.FileField(upload_to='media/arxiv_sonlar/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
@@ -187,9 +187,9 @@ class ArxivSon(models.Model):
 
 
 class Maqola(models.Model):
-    tahrirchilar = models.ManyToManyField(Tahrirchi, related_name='maqolalar', blank=True, null=True)
+    tahrirchilar = models.ManyToManyField(Tahrirchi, related_name='maqolalar',)
     content = RichTextField(blank=True, null=True)
-    arxiv_sonlar = models.ManyToManyField(ArxivSon, related_name='maqolalar', blank=True, null=True)
+    arxiv_sonlar = models.ManyToManyField(ArxivSon, related_name='maqolalar',)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
@@ -314,7 +314,7 @@ class Arxiv(models.Model):
     yil = models.CharField(max_length=255, blank=True, null=True)
     nashr_raqami = models.CharField(max_length=255, blank=True, null=True)
     file_url = models.FileField(upload_to='media/Arxiv/files', blank=True, null=True)
-    arxiv_list = models.ManyToManyField(ArxivMenu, related_name='arxiv_list', blank=True, null=True)
+    arxiv_list = models.ManyToManyField(ArxivMenu, related_name='arxiv_list',)
 
     STATUS_CHOICES = [
         ('published', 'Published'),
