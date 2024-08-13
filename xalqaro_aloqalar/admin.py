@@ -1,7 +1,6 @@
 from django.contrib import admin
-
 from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar
-from .models import Tadqiqot, Kelganlar
+from xalqaro_aloqalar.models import Tadqiqot, Kelganlar
 
 
 @admin.register(Xamkor_tashkilot)
@@ -22,8 +21,8 @@ class Xamkor_loihalarAdmin(admin.ModelAdmin):
 
 # @admin.register(Xalqaro_tadqiqot)
 # class Xalqaro_tadqiqotAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order',)
-#     search_fields = ('title',)
+#     list_display = ('title', 'status', 'created_at', 'updated_at', 'order')
+#     search_fields = ('title')
 #     fields = ['title_uz', 'title_en', 'content_uz', 'content_en', 'subcontent_uz', 'subcontent_en',
 #               'file', 'status', 'order', ]
 #

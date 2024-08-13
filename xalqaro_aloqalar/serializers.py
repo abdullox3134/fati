@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar
 # serializers.py
-from .models import Tadqiqot, Kelganlar
+from xalqaro_aloqalar.models import Tadqiqot, Kelganlar
 
 
 class KelganlarSerializer(serializers.ModelSerializer):

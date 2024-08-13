@@ -1,6 +1,6 @@
 from django.urls import path
 from xalqaro_aloqalar.views import (Xamkor_tashkilotListView, xamkor_tashkilotdetail, Xamkor_loihalarListView,\
-      xamkor_loihalardetail, Xalqaro_sayohatlarListView, xalqaro_sayohatlardetail, TadqiqotListView, Tadqiqotdetail,
+     xamkor_loihalardetail, Xalqaro_sayohatlarListView, xalqaro_sayohatlardetail, TadqiqotListView, Tadqiqotdetail,
                                     KelganlarListView, Kelganlardetail)
 
 
