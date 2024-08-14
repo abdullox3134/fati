@@ -28,11 +28,36 @@ class Xamkor_tashkilot(models.Model):
         verbose_name_plural = 'Xamkor tashkilotlar'
 
 
-class Xamkor_loihalar(models.Model):
-    title = models.CharField(max_length=255)
+class xamkor_loyihalar_data(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
     content = RichTextField(blank=True, null=True)
-    subcontent = RichTextField(blank=True, null=True)
-    file = models.FileField(upload_to='media/Xamkor_loihalar/files/', blank=True, null=True)
+    isCompleted = models.BooleanField(default=False, blank=True, null=True)
+    STATUS_CHOICES = [
+        ('published', 'Published'),
+        ('not_published', 'Not Published'),
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='published',
+    )
+    order = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'xamkor_loyihalar_data'
+        verbose_name_plural = 'xamkor_loyihalar_data'
+
+
+class Xamkor_loihalar(models.Model):
+    title = models.CharField(max_length=255, blank=True, null=True)
+    content = RichTextField(blank=True, null=True)
+    img_file = models.ImageField(upload_to='media/Xamkor_loihalar/files/', blank=True, null=True)
+    xamkor_loiha = models.ManyToManyField(xamkor_loyihalar_data, related_name='Xamkor_loiha')
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),

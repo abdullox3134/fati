@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar
+from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar, xamkor_loyihalar_data
 # serializers.py
 from xalqaro_aloqalar.models import Tadqiqot, Kelganlar
 
@@ -28,11 +28,23 @@ class Xamkor_tashkilotSerializer(serializers.ModelSerializer):
                   'status', 'order', 'created_at', 'updated_at',)
 
 
+class xamkor_loyihalar_dataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = xamkor_loyihalar_data
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',
+                  'status', 'order', 'isCompleted', 'created_at', 'updated_at',)
+
+
 class Xamkor_loihalarSerializer(serializers.ModelSerializer):
+    xamkor_loiha = xamkor_loyihalar_dataSerializer(many=True, read_only=True)
+
     class Meta:
         model = Xamkor_loihalar
-        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en', 'subcontent_uz', 'subcontent_en', 'file',
-                  'status', 'order', 'created_at', 'updated_at',)
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'img_file', 'xamkor_loiha',
+                  'status', 'order', 'created_at', 'updated_at')
+
+
+
 
 
 # class Xalqaro_tadqiqotSerializer(serializers.ModelSerializer):

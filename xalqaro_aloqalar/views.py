@@ -3,10 +3,11 @@ from rest_framework.generics import ListAPIView
 from rest_framework import filters
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar, Tadqiqot, Kelganlar
+from xalqaro_aloqalar.models import Xamkor_tashkilot, Xamkor_loihalar, Xalqaro_sayohatlar, Tadqiqot, Kelganlar, \
+    xamkor_loyihalar_data
 from xalqaro_aloqalar.pagination import ResultsSetPagination
 from xalqaro_aloqalar.serializers import Xamkor_tashkilotSerializer, Xamkor_loihalarSerializer, \
-    Xalqaro_sayohatlarSerializer, TadqiqotSerializer, KelganlarSerializer
+    Xalqaro_sayohatlarSerializer, TadqiqotSerializer, KelganlarSerializer, xamkor_loyihalar_dataSerializer
 
 
 class Xamkor_tashkilotListView(ListAPIView):
@@ -30,7 +31,6 @@ class Xamkor_loihalarListView(ListAPIView):
     search_fields = ['title']
     filter_backends = (filters.SearchFilter,)
     serializer_class = Xamkor_loihalarSerializer
-    pagination_class = ResultsSetPagination
 
     def get_queryset(self):
         return Xamkor_loihalar.objects.all().order_by('order')
@@ -40,6 +40,23 @@ class Xamkor_loihalarListView(ListAPIView):
 def xamkor_loihalardetail(request, pk):
     xamkor_loihalar = get_object_or_404(Xamkor_loihalar, pk=pk)
     serializer = Xamkor_loihalarSerializer(xamkor_loihalar, context={'request': request})
+    return Response(serializer.data)
+
+
+class xamkor_loyihalar_dataListView(ListAPIView):
+    search_fields = ['title']
+    filter_backends = (filters.SearchFilter,)
+    serializer_class = xamkor_loyihalar_dataSerializer
+    pagination_class = ResultsSetPagination
+
+    def get_queryset(self):
+        return xamkor_loyihalar_data.objects.all().order_by('order')
+
+
+@api_view(['GET'])
+def xamkor_loyihalar_datadetail(request, pk):
+    xamkor_loiha = get_object_or_404(xamkor_loyihalar_data, pk=pk)
+    serializer = xamkor_loyihalar_dataSerializer(xamkor_loiha, context={'request': request})
     return Response(serializer.data)
 
 

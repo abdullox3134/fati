@@ -50,7 +50,7 @@ class Xodimlar(models.Model):
 
 
 class MarkazlarBolimlar(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True, null=True)
     tarix = RichTextField(blank=True, null=True)
     xodimlar = models.ManyToManyField(Xodimlar, related_name='markazlar_bolimlar', )
     fotogalereya = models.ManyToManyField(Fotogalereya, related_name='markazlar_bolimlar',)
