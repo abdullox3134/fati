@@ -70,11 +70,11 @@ class XodimlarAdmin(admin.ModelAdmin):
 
 
 class MarkazlarBolimlarAdmin(admin.ModelAdmin):
-    list_display = ('status', 'order', 'created_at', 'updated_at', 'status', 'order',)
-    search_fields = ('status', 'order')
+    list_display = ('title', 'status', 'order', 'created_at', 'updated_at', 'status', 'order',)
+    search_fields = ('title',)
     list_filter = ('status', 'created_at', 'updated_at')
     filter_horizontal = ('xodimlar', 'fotogalereya', 'slider')
-    fields = ('tarix_uz', 'tarix_en', 'xodimlar', 'fotogalereya', 'slider', 'status', 'order',)
+    fields = ('title_uz', 'title_en', 'tarix_uz', 'tarix_en', 'xodimlar', 'fotogalereya', 'slider', 'status', 'order',)
 
 
 admin.site.register(Fotogalereya, FotogalereyaAdmin)

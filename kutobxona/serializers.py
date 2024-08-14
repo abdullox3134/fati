@@ -38,7 +38,7 @@ from . models import Maqola, Tahrirchi, ArxivSon, Avtoreferat, Manba, ElektronKi
 class TalabalarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Talablar
-        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'sub_content_uz', 'sub_content_en', 'file',
+        fields = ('id', 'title_uz', 'title_en', 'content_uz', 'content_en',  'sub_content_uz', 'sub_content_en', 'img_url',
                   'status', 'order', 'created_at', 'Updated_at')
 
 

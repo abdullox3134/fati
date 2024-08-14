@@ -42,7 +42,7 @@ class RequirementsAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'created_at', 'Updated_at', 'order',)
     search_fields = ('title',)
     fields = ('title_uz', 'title_en', 'content_uz', 'content_en', 'sub_content_uz',
-              'sub_content_en', 'file', 'status', 'order',)
+              'sub_content_en', 'img_url', 'status', 'order',)
 
 
 class TahrirchiAdmin(admin.ModelAdmin):

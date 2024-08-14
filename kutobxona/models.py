@@ -115,7 +115,7 @@ class Talablar(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextField(blank=True, null=True)
     sub_content = RichTextField(blank=True, null=True)
-    file = models.FileField(upload_to='media/archive/files/', blank=True, null=True)
+    img_url = models.ImageField(upload_to='media/Talablar/files/', blank=True, null=True)
     STATUS_CHOICES = [
         ('published', 'Published'),
         ('not_published', 'Not Published'),
