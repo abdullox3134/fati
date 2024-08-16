@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-#
+
 
 DATABASES = {
     'default': {
@@ -113,6 +113,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://backend.uzfati.uz',
+]
 
 
 # Password validation
